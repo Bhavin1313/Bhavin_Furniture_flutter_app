@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:furniture_app/Screens/all_product_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,191 +12,417 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffffffff),
       appBar: AppBar(
-        toolbarHeight: 60,
+        toolbarHeight: 20,
         elevation: 0,
         backgroundColor: Color(0xffffffff),
-        title: Text(
-          "Wel Come ",
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        actions: [
-          Icon(
-            Icons.home,
-            color: Colors.black,
-          ),
-          SizedBox(
-            width: 10,
-          ),
-        ],
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            margin: EdgeInsets.all(20),
-            height: 40,
-            width: 400,
-            decoration: BoxDecoration(
-              color: Color(0xfff5f5f5),
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                  offset: Offset(0, 0),
-                  spreadRadius: 1,
-                  color: Colors.black,
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                SizedBox(
+                  width: 20,
                 ),
+                CircleAvatar(
+                  radius: 20,
+                  child: Image.network(
+                      "https://howtodrawforkids.com/wp-content/uploads/2022/07/how-to-draw-the-sun.jpg"),
+                ),
+                Column(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(left: 20),
+                      height: 25,
+                      width: 150,
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        "Good Morning 👋",
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 20),
+                      height: 25,
+                      width: 150,
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        "Bhavin Bhalala",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                ),
+                // Container(
+                //   margin: EdgeInsets.only(left: 20),
+                //   height: 25,
+                //   width: 50,
+                //   alignment: Alignment.topLeft,
+                //   child: Text(
+                //     "Bhavin ",
+                //     style: TextStyle(
+                //         color: Colors.black,
+                //         fontSize: 18,
+                //         fontWeight: FontWeight.bold),
+                //   ),
+                // ),
               ],
             ),
-            alignment: Alignment.centerLeft,
-            child: Text(
-              "  💭 Search       \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t 👀",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 16,
+            Container(
+              margin: EdgeInsets.all(20),
+              height: 40,
+              width: 400,
+              decoration: BoxDecoration(
+                color: Color(0xfff5f5f5),
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(0, 0),
+                    spreadRadius: 1,
+                    color: Colors.black,
+                  ),
+                ],
+              ),
+              alignment: Alignment.centerLeft,
+              child: const Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Icon(
+                      Icons.search,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  Text(
+                    "Search",
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 16,
+                    ),
+                  ),
+                  Spacer(),
+                  Icon(Icons.list_rounded),
+                  SizedBox(
+                    width: 10,
+                  ),
+                ],
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: Text(
-              "Category",
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
+            Padding(
+              padding: EdgeInsets.only(left: 20),
+              child: Text(
+                "Special Offers",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
             ),
-          ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
+            Row(
               children: [
                 Container(
-                  margin: EdgeInsets.all(20),
-                  height: 35,
-                  width: 58,
+                  margin: EdgeInsets.only(top: 20, left: 20, right: 20),
+                  height: 150,
+                  width: 320,
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(18),
-                    boxShadow: [
-                      BoxShadow(
-                        offset: Offset(0, 0),
-                        spreadRadius: 1,
-                        color: Colors.black,
-                      ),
-                    ],
-                  ),
+                      color: Color(0xfff5f5f5),
+                      borderRadius: BorderRadius.circular(30),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 0),
+                          spreadRadius: 0,
+                          color: Colors.black,
+                        ),
+                      ],
+                      image: DecorationImage(
+                        image: AssetImage(
+                          "lib/Assets/Images/chair.png",
+                        ),
+                        fit: BoxFit.cover,
+                      )),
                   alignment: Alignment.center,
-                  child: Text(
-                    "All",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.all(20),
-                  height: 35,
-                  width: 58,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(18),
-                    boxShadow: [
-                      BoxShadow(
-                        offset: Offset(0, 0),
-                        spreadRadius: 1,
-                        color: Colors.black,
-                      ),
-                    ],
-                  ),
-                  alignment: Alignment.center,
-                  child: Text(
-                    "All",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.all(20),
-                  height: 35,
-                  width: 58,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(18),
-                    boxShadow: [
-                      BoxShadow(
-                        offset: Offset(0, 0),
-                        spreadRadius: 1,
-                        color: Colors.black,
-                      ),
-                    ],
-                  ),
-                  alignment: Alignment.center,
-                  child: Text(
-                    "All",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.all(20),
-                  height: 35,
-                  width: 58,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(18),
-                    boxShadow: [
-                      BoxShadow(
-                        offset: Offset(0, 0),
-                        spreadRadius: 1,
-                        color: Colors.black,
-                      ),
-                    ],
-                  ),
-                  alignment: Alignment.center,
-                  child: Text(
-                    "All",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.all(20),
-                  height: 35,
-                  width: 58,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(18),
-                    boxShadow: [
-                      BoxShadow(
-                        offset: Offset(0, 0),
-                        spreadRadius: 1,
-                        color: Colors.black,
-                      ),
-                    ],
-                  ),
-                  alignment: Alignment.center,
-                  child: Text(
-                    "All",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                    ),
-                  ),
                 ),
               ],
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Text(
+                "Most Popular",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 1, left: 20, bottom: 20),
+                    height: 25,
+                    width: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 0),
+                          spreadRadius: 1,
+                          color: Colors.black,
+                        )
+                      ],
+                    ),
+                    alignment: Alignment.center,
+                    child: Text("All"),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 1, left: 10, bottom: 20),
+                    height: 25,
+                    width: 53,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 0),
+                          spreadRadius: 1,
+                          color: Colors.black,
+                        )
+                      ],
+                    ),
+                    alignment: Alignment.center,
+                    child: Text("Sofa"),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 1, left: 10, bottom: 20),
+                    height: 25,
+                    width: 55,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 0),
+                          spreadRadius: 1,
+                          color: Colors.black,
+                        )
+                      ],
+                    ),
+                    alignment: Alignment.center,
+                    child: Text("Chair"),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 1, left: 10, bottom: 20),
+                    height: 25,
+                    width: 55,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 0),
+                          spreadRadius: 1,
+                          color: Colors.black,
+                        )
+                      ],
+                    ),
+                    alignment: Alignment.center,
+                    child: Text("Table"),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 1, left: 10, bottom: 20),
+                    height: 25,
+                    width: 59,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 0),
+                          spreadRadius: 1,
+                          color: Colors.black,
+                        )
+                      ],
+                    ),
+                    alignment: Alignment.center,
+                    child: Text("Kitchen"),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 1, left: 10, bottom: 20),
+                    height: 25,
+                    width: 55,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 0),
+                          spreadRadius: 1,
+                          color: Colors.black,
+                        )
+                      ],
+                    ),
+                    alignment: Alignment.center,
+                    child: Text("Lamp"),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 1, left: 10, bottom: 20),
+                    height: 25,
+                    width: 70,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 0),
+                          spreadRadius: 1,
+                          color: Colors.black,
+                        )
+                      ],
+                    ),
+                    alignment: Alignment.center,
+                    child: Text("Cupboard"),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 1, left: 10, bottom: 20),
+                    height: 25,
+                    width: 55,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 0),
+                          spreadRadius: 1,
+                          color: Colors.black,
+                        )
+                      ],
+                    ),
+                    alignment: Alignment.center,
+                    child: Text("Vase"),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 1, left: 10, bottom: 20),
+                    height: 25,
+                    width: 90,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 0),
+                          spreadRadius: 1,
+                          color: Colors.black,
+                        )
+                      ],
+                    ),
+                    alignment: Alignment.center,
+                    child: Text("Nidhtstand"),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 1, left: 10, bottom: 20),
+                    height: 25,
+                    width: 90,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 0),
+                          spreadRadius: 1,
+                          color: Colors.black,
+                        )
+                      ],
+                    ),
+                    alignment: Alignment.center,
+                    child: Text("Wardrobe"),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(
+                        top: 1, left: 10, bottom: 20, right: 20),
+                    height: 25,
+                    width: 90,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 0),
+                          spreadRadius: 1,
+                          color: Colors.black,
+                        )
+                      ],
+                    ),
+                    alignment: Alignment.center,
+                    child: Text("Recliner"),
+                  ),
+                ],
+              ),
+            ),
+            Column(
+              children: [
+                product(),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
+}
+
+Widget product() {
+  return SingleChildScrollView(
+    child: Column(
+      children: [
+        ...AllProducts.map(
+          (e) => Container(
+            margin: EdgeInsets.all(20),
+            height: 500,
+            width: 350,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+            ),
+            child: Column(
+              children: [
+                Expanded(
+                  flex: 4,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30),
+                        image: DecorationImage(
+                          image: NetworkImage(
+                            e['thumbnail'],
+                          ),
+                          fit: BoxFit.cover,
+                        )),
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ).toList(),
+      ],
+    ),
+  );
 }
