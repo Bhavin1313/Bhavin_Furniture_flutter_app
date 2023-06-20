@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_app/Screens/all_product_list.dart';
+import 'package:furniture_app/utils/sofa.dart';
+import 'package:flutter/src/material/dropdown.dart';
+import 'detail_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,6 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String? select;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -174,226 +178,47 @@ class _HomePageState extends State<HomePage> {
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
-                          Container(
-                            margin:
-                                EdgeInsets.only(top: 1, left: 20, bottom: 20),
-                            height: 25,
-                            width: 50,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              boxShadow: [
-                                BoxShadow(
-                                  offset: Offset(0, 0),
-                                  spreadRadius: 1,
-                                  color: Colors.black,
-                                )
-                              ],
-                            ),
-                            alignment: Alignment.center,
-                            child: Text("All"),
-                          ),
-                          Container(
-                            margin:
-                                EdgeInsets.only(top: 1, left: 10, bottom: 20),
-                            height: 25,
-                            width: 53,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              boxShadow: [
-                                BoxShadow(
-                                  offset: Offset(0, 0),
-                                  spreadRadius: 1,
-                                  color: Colors.black,
-                                )
-                              ],
-                            ),
-                            alignment: Alignment.center,
-                            child: Text("Sofa"),
-                          ),
-                          Container(
-                            margin:
-                                EdgeInsets.only(top: 1, left: 10, bottom: 20),
-                            height: 25,
-                            width: 55,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              boxShadow: [
-                                BoxShadow(
-                                  offset: Offset(0, 0),
-                                  spreadRadius: 1,
-                                  color: Colors.black,
-                                )
-                              ],
-                            ),
-                            alignment: Alignment.center,
-                            child: Text("Chair"),
-                          ),
-                          Container(
-                            margin:
-                                EdgeInsets.only(top: 1, left: 10, bottom: 20),
-                            height: 25,
-                            width: 55,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              boxShadow: [
-                                BoxShadow(
-                                  offset: Offset(0, 0),
-                                  spreadRadius: 1,
-                                  color: Colors.black,
-                                )
-                              ],
-                            ),
-                            alignment: Alignment.center,
-                            child: Text("Table"),
-                          ),
-                          Container(
-                            margin:
-                                EdgeInsets.only(top: 1, left: 10, bottom: 20),
-                            height: 25,
-                            width: 59,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              boxShadow: [
-                                BoxShadow(
-                                  offset: Offset(0, 0),
-                                  spreadRadius: 1,
-                                  color: Colors.black,
-                                )
-                              ],
-                            ),
-                            alignment: Alignment.center,
-                            child: Text("Kitchen"),
-                          ),
-                          Container(
-                            margin:
-                                EdgeInsets.only(top: 1, left: 10, bottom: 20),
-                            height: 25,
-                            width: 55,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              boxShadow: [
-                                BoxShadow(
-                                  offset: Offset(0, 0),
-                                  spreadRadius: 1,
-                                  color: Colors.black,
-                                )
-                              ],
-                            ),
-                            alignment: Alignment.center,
-                            child: Text("Lamp"),
-                          ),
-                          Container(
-                            margin:
-                                EdgeInsets.only(top: 1, left: 10, bottom: 20),
-                            height: 25,
-                            width: 70,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              boxShadow: [
-                                BoxShadow(
-                                  offset: Offset(0, 0),
-                                  spreadRadius: 1,
-                                  color: Colors.black,
-                                )
-                              ],
-                            ),
-                            alignment: Alignment.center,
-                            child: Text("Cupboard"),
-                          ),
-                          Container(
-                            margin:
-                                EdgeInsets.only(top: 1, left: 10, bottom: 20),
-                            height: 25,
-                            width: 55,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              boxShadow: [
-                                BoxShadow(
-                                  offset: Offset(0, 0),
-                                  spreadRadius: 1,
-                                  color: Colors.black,
-                                )
-                              ],
-                            ),
-                            alignment: Alignment.center,
-                            child: Text("Vase"),
-                          ),
-                          Container(
-                            margin:
-                                EdgeInsets.only(top: 1, left: 10, bottom: 20),
-                            height: 25,
-                            width: 90,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              boxShadow: [
-                                BoxShadow(
-                                  offset: Offset(0, 0),
-                                  spreadRadius: 1,
-                                  color: Colors.black,
-                                )
-                              ],
-                            ),
-                            alignment: Alignment.center,
-                            child: Text("Nidhtstand"),
-                          ),
-                          Container(
-                            margin:
-                                EdgeInsets.only(top: 1, left: 10, bottom: 20),
-                            height: 25,
-                            width: 90,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              boxShadow: [
-                                BoxShadow(
-                                  offset: Offset(0, 0),
-                                  spreadRadius: 1,
-                                  color: Colors.black,
-                                )
-                              ],
-                            ),
-                            alignment: Alignment.center,
-                            child: Text("Wardrobe"),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(
-                                top: 1, left: 10, bottom: 20, right: 20),
-                            height: 25,
-                            width: 90,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              boxShadow: [
-                                BoxShadow(
-                                  offset: Offset(0, 0),
-                                  spreadRadius: 1,
-                                  color: Colors.black,
-                                )
-                              ],
-                            ),
-                            alignment: Alignment.center,
-                            child: Text("Recliner"),
+                          DropdownButton(
+                            hint: Text("Select Category"),
+                            value: select,
+                            items: Cat.map(
+                              (e) => DropdownMenuItem(
+                                child: Text(e),
+                                value: e,
+                              ),
+                            ).toList(),
+                            onChanged: (val) {
+                              setState(
+                                () {
+                                  select = val;
+                                },
+                              );
+                            },
                           ),
                         ],
                       ),
                     ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          product(),
-                        ],
-                      ),
-                    ),
+                    (select != null)
+                        ? SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: product(category: select!))
+                        : SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: [
+                                product(category: "sofa"),
+                                product(category: "chair"),
+                                product(category: "table"),
+                                product(category: "kitchen"),
+                                product(category: "lamp"),
+                                product(category: "cupboard"),
+                                product(category: "vase"),
+                                product(category: "nightstand"),
+                                product(category: "wardrobe"),
+                                product(category: "recliner"),
+                              ],
+                            ),
+                          ),
                     Container(
                       height: 100,
                     )
@@ -528,78 +353,4 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-}
-
-Widget product() {
-  return SingleChildScrollView(
-    child: Row(
-      children: [
-        ...AllProducts.map(
-          (e) => Container(
-            margin: EdgeInsets.all(20),
-            height: 300,
-            width: 200,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-            ),
-            child: Column(
-              children: [
-                Expanded(
-                  flex: 7,
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(30),
-                        image: DecorationImage(
-                          image: NetworkImage(
-                            e['thumbnail'],
-                          ),
-                          fit: BoxFit.cover,
-                        )),
-                  ),
-                ),
-                Expanded(
-                  flex: 3,
-                  child: Container(
-                    decoration: BoxDecoration(color: Colors.white),
-                    child: Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Container(
-                            child: Text(
-                              e['title'],
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 17,
-                              ),
-                            ),
-                          ),
-                          Container(
-                            child: Text(
-                              "Rs. ${e['price']}",
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 17,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ).toList(),
-      ],
-    ),
-  );
 }
