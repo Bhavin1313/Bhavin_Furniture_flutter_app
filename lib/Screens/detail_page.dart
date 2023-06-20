@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'all_product_list.dart';
+
 class Detail_Scereen extends StatefulWidget {
   const Detail_Scereen({Key? key}) : super(key: key);
 
@@ -17,7 +19,14 @@ class _Detail_ScereenState extends State<Detail_Scereen> {
       floatingActionButton: FloatingActionButton(
         elevation: 0,
         autofocus: false,
-        onPressed: () {},
+        onPressed: () {
+          if (!addedProducts.contains(data)) {
+            addedProducts.add(data);
+          }
+          Navigator.of(context).pushNamed(
+            'cart_page',
+          );
+        },
         backgroundColor: Colors.black,
         child: Icon(
           Icons.shopping_bag_outlined,

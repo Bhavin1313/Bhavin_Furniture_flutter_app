@@ -1,3 +1,5 @@
+List<Map<String, dynamic>> addedProducts = [];
+
 List<String> Cat = [
   "sofa",
   "chair",
