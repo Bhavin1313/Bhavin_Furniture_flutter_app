@@ -178,6 +178,9 @@ class _HomePageState extends State<HomePage> {
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
+                          SizedBox(
+                            width: 20,
+                          ),
                           DropdownButton(
                             hint: Text("Select Category"),
                             value: select,
